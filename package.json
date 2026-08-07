@@ -1,0 +1,23 @@
+{
+  "name": "software-margin-tearsheet",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Ten-year margin trajectory and pricing power analysis across 56 public software companies",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.13.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.0",
+    "vite": "^5.4.11"
+  }
+}
