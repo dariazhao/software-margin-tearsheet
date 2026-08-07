@@ -4,11 +4,12 @@ import {
   Tooltip, ResponsiveContainer, LineChart, Line, ReferenceLine,
   BarChart, Bar, Legend, ComposedChart
 } from "recharts";
+import { WelcomeTour, TourButton } from "./WelcomeTour.jsx";
 
 /* ------------------------------------------------------------------ */
 /*  PALETTE                                                            */
 /* ------------------------------------------------------------------ */
-const C = {
+export const C = {
   canvas: "#0E1216",
   panel: "#161B21",
   panel2: "#1B222A",
@@ -22,8 +23,8 @@ const C = {
   blue: "#7FA8D9",
 };
 
-const MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace";
-const SANS = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+export const MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace";
+export const SANS = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 const YEARS = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
 
@@ -281,7 +282,7 @@ function Ribbon({ series, lo, hi, w = 108, h = 26 }) {
 /* ------------------------------------------------------------------ */
 /*  SMALL PARTS                                                        */
 /* ------------------------------------------------------------------ */
-const Label = ({ children, style }) => (
+export const Label = ({ children, style }) => (
   <div style={{ fontFamily: SANS, fontSize: 9.5, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted, ...style }}>
     {children}
   </div>
@@ -308,7 +309,7 @@ function PowerBar({ v }) {
   );
 }
 
-function Btn({ active, onClick, children }) {
+export function Btn({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
@@ -737,6 +738,7 @@ export default function SoftwareTearsheet() {
   const [sort, setSort] = useState({ key: "revLatest", dir: -1 });
   const [sel, setSel] = useState(null);
   const [compare, setCompare] = useState(["ADSK", "MSFT", "ZM", "SNOW", "U"]);
+  const [tourOpen, setTourOpen] = useState(false);
 
   const M = METRICS.find((m) => m.key === metric);
 
@@ -794,6 +796,7 @@ export default function SoftwareTearsheet() {
 
   return (
     <div style={{ background: C.canvas, color: C.ink, minHeight: "100vh", fontFamily: SANS }}>
+      <WelcomeTour forceOpen={tourOpen} onClose={() => setTourOpen(false)} />
       <div className="max-w-full mx-auto px-5 py-5">
 
         {/* MASTHEAD */}
@@ -804,9 +807,12 @@ export default function SoftwareTearsheet() {
               Margin trajectory &amp; pricing power
             </h1>
           </div>
-          <div style={{ fontFamily: MONO, fontSize: 11, color: C.muted, textAlign: "right", lineHeight: 1.7 }}>
-            <div>{COMPANIES.length} companies · {CATEGORIES.length - 1} categories · 10 years</div>
-            <div style={{ color: C.dim }}>Fiscal years aligned to nearest calendar year</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ fontFamily: MONO, fontSize: 11, color: C.muted, textAlign: "right", lineHeight: 1.7 }}>
+              <div>{COMPANIES.length} companies · {CATEGORIES.length - 1} categories · 10 years</div>
+              <div style={{ color: C.dim }}>Fiscal years aligned to nearest calendar year</div>
+            </div>
+            <TourButton onClick={() => setTourOpen(true)} />
           </div>
         </div>
 
