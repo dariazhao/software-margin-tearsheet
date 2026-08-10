@@ -1180,7 +1180,7 @@ export default function SoftwareTearsheet() {
               Sign up for future events
             </a>
           </div>
-          <div style={{ fontFamily: SANS, fontSize: 11, color: C.dim, lineHeight: 1.7 }}>
+          <div style={{ fontFamily: MONO, fontSize: 11, color: C.dim, lineHeight: 1.7 }}>
             Made with ♥️ by Daria.
             <br />
             © 2026. All rights reserved.
