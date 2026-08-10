@@ -731,7 +731,7 @@ function Cohort({ companies }) {
 export default function SoftwareTearsheet() {
   const [view, setView] = useState("table");
   const [metric, setMetric] = useState("gm");
-  const [year, setYear] = useState(4);
+  const [year, setYear] = useState(YEARS.length - 1); // default to latest FY, matching modal/charts
   const [cat, setCat] = useState("All");
   const [size, setSize] = useState("all");
   const [q, setQ] = useState("");
@@ -853,6 +853,11 @@ export default function SoftwareTearsheet() {
                     <Btn key={y} active={year===i} onClick={()=>setYear(i)}>{`'${String(y).slice(2)}`}</Btn>
                   ))}
                 </div>
+                {view === "table" && year !== YEARS.length - 1 && (
+                  <span style={{ fontFamily: MONO, fontSize: 10.5, color: C.amber }}>
+                    Viewing FY{String(YEARS[year]).slice(2)} — Rule of 40 &amp; NRR always reflect latest FY, click detail row for full history.
+                  </span>
+                )}
               </div>
             </>
           )}
@@ -886,11 +891,11 @@ export default function SoftwareTearsheet() {
                 <tr>
                   <TH k="name" align="left" w={210}>Company</TH>
                   <TH k="revLatest">Rev FY{String(YEARS[year]).slice(2)} $M</TH>
-                  <TH k="growthLatest">Growth</TH>
-                  <TH k="gmLatest">Gross mgn</TH>
-                  <TH k="fcfLatest">FCF mgn</TH>
-                  <TH k="rule40">Rule of 40</TH>
-                  <TH k="nrr">NRR</TH>
+                  <TH k="growthLatest">Growth FY{String(YEARS[year]).slice(2)}</TH>
+                  <TH k="gmLatest">Gross mgn FY{String(YEARS[year]).slice(2)}</TH>
+                  <TH k="fcfLatest">FCF mgn FY{String(YEARS[year]).slice(2)}</TH>
+                  <TH k="rule40">Rule of 40 (latest FY)</TH>
+                  <TH k="nrr">NRR (latest)</TH>
                   <TH k="gmDelta">GM Δ life</TH>
                   <TH k="fcfDelta">FCF Δ life</TH>
                   <th className="py-2 px-2" style={{ textAlign: "left", fontFamily: SANS, fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: C.muted, fontWeight: 400, borderBottom: `1px solid ${C.rule}`, position: "sticky", top: 0, background: C.canvas, zIndex: 2, whiteSpace: "nowrap" }}>
@@ -1181,7 +1186,7 @@ export default function SoftwareTearsheet() {
             </a>
           </div>
           <div style={{ fontFamily: MONO, fontSize: 11, color: C.dim, lineHeight: 1.7 }}>
-            Made with ♥️ by Daria.
+            Made with 🦾 by Daria.
             <br />
             © 2026. All rights reserved.
           </div>
