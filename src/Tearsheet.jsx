@@ -1155,6 +1155,37 @@ export default function SoftwareTearsheet() {
           ))}
           <span>Pricing power = 0.35 gross margin + 0.25 NRR + 0.25 three-year avg growth + 0.15 gross margin trend</span>
         </div>
+
+        {/* SITE FOOTER */}
+        <div className="mt-8 pt-6 text-center" style={{ borderTop: `1px solid ${C.rule}` }}>
+          <div className="flex justify-center flex-wrap gap-2.5 mb-4">
+            <a
+              href="https://www.dariasdrafts.com/#build-log"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 transition-colors"
+              style={{ fontFamily: MONO, fontSize: 11, color: C.blue, background: "rgba(127,168,217,0.10)", border: `1px solid rgba(127,168,217,0.28)`, borderRadius: 2 }}
+            >
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
+              View the build log
+            </a>
+            <a
+              href="https://luma.com/calendar/cal-y7Q8MCsPwKeiJ8r"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 transition-colors"
+              style={{ fontFamily: MONO, fontSize: 11, color: C.amber, background: "rgba(242,193,78,0.10)", border: `1px solid rgba(242,193,78,0.28)`, borderRadius: 2 }}
+            >
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+              Sign up for future events
+            </a>
+          </div>
+          <div style={{ fontFamily: SANS, fontSize: 11, color: C.dim, lineHeight: 1.7 }}>
+            Made with ♥️ by Daria.
+            <br />
+            © 2026. All rights reserved.
+          </div>
+        </div>
       </div>
     </div>
   );
