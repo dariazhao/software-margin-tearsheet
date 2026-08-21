@@ -1165,16 +1165,6 @@ export default function SoftwareTearsheet() {
         <div className="mt-8 pt-6 text-center" style={{ borderTop: `1px solid ${C.rule}` }}>
           <div className="flex justify-center flex-wrap gap-2.5 mb-4">
             <a
-              href="https://www.dariasdrafts.com/#build-log"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 transition-colors"
-              style={{ fontFamily: MONO, fontSize: 11, color: C.blue, background: "rgba(127,168,217,0.10)", border: `1px solid rgba(127,168,217,0.28)`, borderRadius: 2 }}
-            >
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
-              View the build log
-            </a>
-            <a
               href="https://luma.com/calendar/cal-y7Q8MCsPwKeiJ8r"
               target="_blank"
               rel="noopener noreferrer"
