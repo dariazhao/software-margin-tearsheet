@@ -1176,7 +1176,7 @@ export default function SoftwareTearsheet() {
             </a>
           </div>
           <div style={{ fontFamily: MONO, fontSize: 11, color: C.dim, lineHeight: 1.7 }}>
-            Made with ♥️ by Daria.
+            Made with 🦾 by Daria.
             <br />
             © 2026. All rights reserved.
           </div>
